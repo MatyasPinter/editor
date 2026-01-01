@@ -1,0 +1,258 @@
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #eaeaea;
+  background: linear-gradient(135deg, #2c2c2c, #0f0f0f);
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #8e2de2, #4a00e0);
+  color: #fff;
+  text-align: center;
+  padding: 42px 20px 34px 20px;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+header h1,
+header p,
+header img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile picture */
+.header-profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+}
+
+/* Subtitle */
+.bold-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* Header text */
+header h1 {
+  font-size: 2.4em;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/* Header Buttons (Glassy) */
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-buttons a {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Sections */
+section {
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  font-size: 2.4em;
+  margin-bottom: 20px;
+  color: #00eaff;
+  border-bottom: 2px solid #00eaff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Why Work With Me - Optimized Spacing */
+#why-work-with-me {
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+#why-work-with-me .services-list {
+  font-size: 1.35em;
+  font-weight: 520;
+  line-height: 1.75;
+  margin-left: 40px;
+  margin-bottom: 15px;
+}
+
+#why-work-with-me .services-list li {
+  margin-bottom: 6px;
+}
+
+#why-work-with-me .final-line {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.75;
+  margin-top: 20px;
+}
+
+/* Portfolio Grid */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.portfolio-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Horizontal Video Fix */
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden; 
+  margin-bottom: 15px;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 101% !important; 
+  height: 1000% !important; 
+  border: none;
+  display: block;
+  object-fit: contain !important; 
+}
+
+/* VERTICAL VIDEO FIX (Shorts) */
+.video-container.vertical {
+  aspect-ratio: 9 / 16; 
+  max-height: 450px; /* Limits height so it doesn't overshadow long-form */
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto 15px auto;
+  background: #000;
+}
+
+.video-container.vertical iframe {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none; 
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+/* Contact */
+.contact-text {
+  font-size: 1.35em;
+  font-weight: 520;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+#contact-me a {
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#contact-me a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-item {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-buttons a {
+    width: 100%;
+    max-width: 260px;
+  }
+}
